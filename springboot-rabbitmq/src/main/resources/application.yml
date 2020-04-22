@@ -1,0 +1,21 @@
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    #消息确认配置项
+    #确认消息已经发送到交换机
+    publisher-confirms: true
+    #确认消息已发送到队列
+    publisher-returns: true
+    #重试机制
+    listener:
+      simple:
+        retry:
+          multiplier: 2
+          max-attempts: 10
+          enabled: true
+          initial-interval: 5000
+          max-interval: 5120000

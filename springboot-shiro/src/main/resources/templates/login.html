@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .error{
+            color:red;
+            position: absolute;
+            left: 900px;
+            top:84px;
+        }
+        .pwd{
+            position: relative;
+            left: 18px;
+        }
+        .remember_input{
+            position: relative;
+            left: 23px;
+            top: 5px;
+        }
+        .remember_text{
+            position: absolute;
+            left: 905px;
+            top: 126px;
+        }
+    </style>
+</head>
+<body>
+<h1 align="center">欢迎来到登录页面</h1>
+<div class="error" th:if="${msg != null }" th:text="${msg}"></div>
+<form method="post" action="/springboot-shiro/login">
+    <p align="center">用户名：<input type="text" name="username"></p>
+    <p align="center">密码：<input class="pwd" type="password" name="password"><input class="remember_input" type="checkbox" name="rememberMe"><div class="remember_text">记住我</div></p>
+    <p align="center"><input type="submit" value="登录"></p>
+</form>
+
+
+</body>
+</html>
